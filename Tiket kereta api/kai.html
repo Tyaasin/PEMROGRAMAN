@@ -1,0 +1,95 @@
+<html>
+<form name="form1">
+<script>
+function Proses()
+{
+var kt=document.form1.kt.value;
+var kelas=document.form1.kelas.value;
+var jt=document.form1.jt.value;
+if((kt=="Bandung"))
+{
+    if((kelas=="ekonomi")) var ht=70000;
+    if((kelas=="bisnis")) var ht=80000;
+    if((kelas=="eksekutif")) var ht=90000;
+}
+if((kt=="Jakarta"))
+{
+    if((kelas="ekonomi")) var ht=100000;
+    if((kelas="bisnis")) var ht=150000;
+    if((kelas="eksekutif")) var ht=200000;
+}
+if((kt=="Surabaya"))
+{
+    if((kelas=="ekonomi")) var ht=150000
+    if((kelas=="bisnis")) var ht=200000
+    if((kelas=="eksekutif")) var ht=300000
+}
+document.form1.ht.value=ht;
+var th=ht*jt;
+document.form1.th.value=th;
+}
+
+function Reset()
+{
+document.form1.np.value=' ';
+document.form1.ht.value=' ';
+document.form1.th.value=' ';
+document.form1.kelas[0].checked=false;
+document.form1.kelas[1].checked=false;
+document.form1.kelas[2].checked=false;
+document.form1.kt.value=' ';
+document.form1.jt.value=' ';
+}
+</script>
+
+
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/Tiket kereta api/w3.css">
+<body>
+
+    <div class="w3-container">
+        <div class="w3-panel w3-red">
+            <center>
+            <h1> PROGRAM TIKET KERETA API
+        </div>
+    </div>
+
+    <div class="w3-panel w3-blue w3-card-4">
+        <p>
+        <center>
+        <table>
+            <tr><td> Nama Pemesan <td><input class="w3-input" type="text" name="np">
+            <tr><td> Kota Tujuan <td><select class="w3-input" name="kt">
+                <option value="Bandung">Bandung
+                <option value="Jakarta">Jakarta
+                <option value="Surabaya">Surabaya
+            <tr><td> Kelas <td><input class="w3-radio" type="radio" name="kelas"  value="ekonomi">Ekonomi
+                <br>
+                <input class="w3-radio" type="radio" name="kelas" value="bisnis">Bisnis
+                <br>
+                <input class="w3-radio" type="radio" name="kelas" value="eksekutif">Eksekutif
+            <tr><td> Jumlah Tiket <td><select class="w3-input" name="jt">
+            <option value="1">1
+            <option value="2">2
+            <option value="3">3
+            <option value="4">4
+            <option value="5">5
+            <tr><td> Harga Tiket <td><input type="text" name="ht">
+            <tr><td> Total Harga <td><input type="text" name="th">
+        </p>
+        </center>
+        </table>
+
+        <div class="w3-panel w3-blue">
+            <center>
+            <p>
+            <input type="button" class="w3-btn w3-red" value="Proses" onclick="Proses()" style="border-radius: 50%;">
+            <input type="button" class="w3-btn w3-yellow" value="Reset" onclick="Reset()" style="border-radius: 50%;">
+            </center>
+            </p>
+        </div>
+    </div>
+</form>
+</body>
+</html>
